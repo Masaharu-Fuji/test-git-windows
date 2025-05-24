@@ -6,14 +6,17 @@ import { submitData } from "./my-modules/submit-data";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+// vite config environment
+const viteEnv = import.meta.env;
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDUl-T9Phq-vBeeGd9wVIpMOThVg7JK5TA",
-  authDomain: "daily-report-87de7.firebaseapp.com",
-  projectId: "daily-report-87de7",
-  storageBucket: "daily-report-87de7.firebasestorage.app",
-  messagingSenderId: "732030484041",
-  appId: "1:732030484041:web:ea9c50a778e54578430998"
+  apiKey: viteEnv.VITE_API_KEY,
+  authDomain: viteEnv.VITE_AUTH_DOMAIN,
+  projectId: viteEnv.VITE_PROJECT_ID,
+  storageBucket: viteEnv.VITE_STORAGE_BUCKET,
+  messagingSenderId: viteEnv.VITE_MESSAGING_SENDER_ID,
+  appId: viteEnv.VITE_APP_ID
 };
 
 // Initialize Firebase
