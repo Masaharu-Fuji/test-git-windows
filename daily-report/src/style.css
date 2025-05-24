@@ -1,0 +1,117 @@
+/* ベーススタイル */
+body {
+  /* フォント設定 */
+  font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  /* レイアウト */
+  padding: 20px;
+}
+
+/* フォームコンテナ */
+.form {
+  /* レイアウト */
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  /* ボックスモデル */
+  padding: 20px;
+  border: 2px solid #000;
+}
+
+/* フォームリスト */
+.form-list {
+  /* レイアウト */
+  display: flex;
+  /* ボックスモデル */
+  margin-bottom: 10px;
+}
+
+/* フォームタイトル */
+.form-title {
+  /* レイアウト */
+  width: 30%;
+  /* テキスト */
+  font-weight: bold;
+  /* インタラクション */
+  cursor: pointer;
+}
+
+/* フォームフィールド */
+.form-field {
+  /* レイアウト */
+  width: 70%;
+}
+
+/* フォームボタンコンテナ */
+.form-button {
+  /* レイアウト */
+  text-align: center;
+}
+
+/* 入力フィールド */
+.input-field {
+  /* レイアウト */
+  width: 100%;
+  /* ボックスモデル */
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+/* ボタン */
+.button {
+  /* レイアウト */
+  padding: 10px 20px;
+  /* ボックスモデル */
+  border: 0;
+  border-radius: 5px;
+  /* テキスト */
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  /* 視覚的スタイル */
+  background-color: #333;
+  /* インタラクション */
+  cursor: pointer;
+  transition: opacity .25s;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/* 履歴リンク */
+.history-link {
+  /* レイアウト */
+  margin-top: 20px;
+  text-align: right;
+  & a {
+    /* レイアウト */
+    margin: 0 auto;
+    /* テキスト */
+    color: #000;
+  }
+}
+
+/* table */
+
+.table {
+  width: 100%;
+}
+
+.table-head {
+  background-color: #eee;
+  & th {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 5px;
+    width: 15%;
+    &:nth-child(4) {
+      width: 55%;
+    }
+  }
+}
+
+.table-body td {
+  text-align: center;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
