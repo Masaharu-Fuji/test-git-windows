@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { addDoc, collection, getDocs, getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -41,4 +41,28 @@ const fetchHistoryData = async () => {
 // Cloud Firestore 取得データの表示
 if (document.getElementById("js-history")) {
   fetchHistoryData();
+}
+
+// Cloud Firestore データ送信
+const submitData = async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  try {
+    const docRef = await addDoc(collection(db, "reports"), {
+      date: new Date(),
+      name: formData.get("name"),
+      work: formData.get("work"),
+      comment: formData.get("comment")
+    });
+    console.log("Document written with ID: ", docRef.id)
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
+// Cloud Firestore データ送信
+if (document.getElementById("js-form")) {
+  document.getElementById("js-form").addEventListener("submit", (e) => {
+    submitData(e);
+  });
 }
