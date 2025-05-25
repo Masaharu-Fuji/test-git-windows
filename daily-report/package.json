@@ -1,0 +1,22 @@
+{
+  "name": "daily-report",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "firebase": "^11.8.1",
+    "firebase-tools": "^14.4.0",
+    "sanitize.css": "^13.0.0"
+  },
+  "volta": {
+    "node": "20.19.2"
+  }
+}
