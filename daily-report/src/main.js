@@ -16,7 +16,7 @@ const firebaseConfig = {
   projectId: viteEnv.VITE_PROJECT_ID,
   storageBucket: viteEnv.VITE_STORAGE_BUCKET,
   messagingSenderId: viteEnv.VITE_MESSAGING_SENDER_ID,
-  appId: viteEnv.VITE_APP_ID
+  appId: viteEnv.VITE_APP_ID,
 };
 
 // Initialize Firebase
@@ -32,7 +32,9 @@ if (document.getElementById("js-history")) {
 
 // Cloud Firestore データ送信
 if (document.getElementById("js-form")) {
-  document.getElementById("js-form").addEventListener("submit", (e) => {
-    submitData(e, db);
-  });
+  document
+    .getElementById("js-form")
+    .addEventListener("submit", e => {
+      submitData(e, db);
+    });
 }
