@@ -32,7 +32,9 @@ if (document.getElementById("js-history")) {
 
 // Cloud Firestore データ送信
 if (document.getElementById("js-form")) {
-  document.getElementById("js-form").addEventListener("submit", (e) => {
-    submitData(e, db);
-  });
+  document
+    .getElementById("js-form")
+    .addEventListener("submit", e => {
+      submitData(e, db);
+    });
 }
