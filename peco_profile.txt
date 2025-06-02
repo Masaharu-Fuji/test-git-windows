@@ -1,0 +1,24 @@
+function psPeco ([switch]$fuzzy) {
+  $origin = [System.Console]::OutputEncoding
+  $utf8 = [System.Text.Encoding]::UTF8
+  $OutputEncoding = $utf8
+  [System.Console]::OutputEncoding = $utf8
+  if ($fuzzy) {
+      $out = $input | peco.exe --initial-filter=Fuzzy
+  }
+  else {
+      $out = $input | peco.exe
+  }
+  [System.Console]::OutputEncoding = $origin
+  return $out
+}
+function repo() {
+$origin = [System.Console]::OutputEncoding
+$utf8 = [System.Text.Encoding]::UTF8
+$OutputEncoding = $utf8
+[System.Console]::OutputEncoding = $utf8
+$repository =  $(ghq list | peco)
+$repositoryPath = (ghq root) + '/' + $repository
+cd $repositoryPath
+[System.Console]::OutputEncoding = $origin
+}
