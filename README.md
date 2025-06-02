@@ -1,42 +1,49 @@
 # test-git-windows
 
-## gh, ghq, peco 導入
+## 開発環境のセットアップ
 
-Windows対応
+### 必要なツールのインストール
 
-1. scoop をインストール
+1. **Scoop** のインストール
+   - Windows用のパッケージマネージャー
 
-2. それぞれをインストール
+2. **各種ツールのインストール**
+   ```bash
+   scoop install git
+   scoop install gh
+   scoop install go
+   go install github.com/motemen/ghq
+   scoop install peco
+   ```
 
-```bash
-scoop install git
-scoop install gh
-scoop install go
-go install github.com/motemen/ghq
-scoop install peco
-```
+3. **Git設定の追加**
+   - `winget install Microsoft.Edit` でエディタをインストール
+   - `~/.gitconfig` に以下の設定を追加:
+   ```txt
+   [ghq]
+       root=D:\\Users\\81703\\ghq
+       root=D:\\Users\\81703\\.ghq
+   ```
 
-3. ~直下に.gitconfig 作成追記
- - edit インストール
-  `winget install Microsoft.Edit`
-
-```.gitconfig
-[ghq]
-	root=D:\\Users\\81703\\ghq
-	root=D:\\Users\\81703\\.ghq
-```
-
-4. リポジトリをクローン
-`ghq get http://github.com/<username>/<repository>`
-
-5. pecoによる実行ファイル作成
-```bash
-echo $PROFILE
-// 直接vscodeを開きたい方は下記
-code $PROFILE
-```
-`peco_profile.txt`参照
+### リポジトリのクローン
 
 ```bash
-repo
+ghq get http://github.com/<username>/<repository>
 ```
+
+### pecoの設定
+
+1. PowerShellプロファイルの確認
+   ```bash
+   echo $PROFILE
+   # VSCodeで開く場合
+   code $PROFILE
+   ```
+
+2. 設定ファイルの参照
+   - `peco_profile.txt` を参照してください
+
+3. リポジトリの検索
+   ```bash
+   repo
+   ```
